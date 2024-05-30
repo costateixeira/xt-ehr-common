@@ -1,0 +1,19 @@
+{
+  "url" : "https://www.xt-ehr.eu/specifications/fhir/ImplementationGuide/hl7.eu.fhir.xt-ehr.empty",
+  "name" : "XtEHR",
+  "title" : "Xt-EHR",
+  "description" : "Xt-EHR",
+  "status" : "draft",
+  "package-id" : "hl7.eu.fhir.xt-ehr.empty",
+  "ig-ver" : "0.1.0",
+  "date" : "Wed, 29 May, 2024 20:54:33 +0000",
+  "dateISO8601" : "2024-05-29T20:54:33+00:00",
+  "errs" : 0,
+  "warnings" : 3,
+  "hints" : 0,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 0,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 952508520
+}

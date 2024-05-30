@@ -1,0 +1,14 @@
+XtEHR : Validation Results
+=========================================
+
+err = 0, warn = 3, info = 0
+IG Publisher Version: 1.6.10
+Generated Wed May 29 20:54:40 UTC 2024. FHIR version 5.0.0 for hl7.eu.fhir.xt-ehr.empty#0.1.0 (canonical = https://www.xt-ehr.eu/specifications/fhir)
+ Build Errors : 0 / 3 / 0
+ /github/workspace/fsh-generated/resources/ImplementationGuide-hl7.eu.fhir.xt-ehr.empty : 0 / 0 / 1
+</table>
+== n/a ==
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-hl7.eu.fhir.xt-ehr.empty.json ==

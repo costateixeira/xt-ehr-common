@@ -1,0 +1,47 @@
+{
+  "date" : "Wed, 29 May, 2024 20:54:33 +0000",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [
+    {
+      "name" : "/fsh-generated/resources/ImplementationGuide-hl7.eu.fhir.xt-ehr.empty.json",
+      "size" : 1489,
+      "processes" : [
+        {
+          "activity" : "load",
+          "start" : 32,
+          "length" : 20
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 32,
+          "length" : 3
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 32,
+          "length" : 53
+        },
+        {
+          "activity" : "validate",
+          "start" : 32,
+          "length" : 529
+        },
+        {
+          "activity" : "generate1",
+          "start" : 33,
+          "length" : 82
+        },
+        {
+          "activity" : "generate2",
+          "start" : 34,
+          "length" : 51
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 38,
+          "length" : 1
+        }
+      ]
+    }
+  ]
+}

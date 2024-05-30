@@ -1,0 +1,9 @@
+[
+  {
+    "id" : "hl7.eu.fhir.xt-ehr.empty",
+    "type" : "ImplementationGuide",
+    "url" : "https://www.xt-ehr.eu/specifications/fhir/ImplementationGuide/hl7.eu.fhir.xt-ehr.empty",
+    "version" : "0.1.0",
+    "name" : "XtEHR"
+  }
+]
