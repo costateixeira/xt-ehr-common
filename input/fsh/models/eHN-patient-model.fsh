@@ -3,6 +3,8 @@
 
 Logical: EHNPatientModel
 Parent: Base
+Title: "Identification of the patient/subject"
+Description: "..."
 Characteristics: #can-be-target
 Id: ehn-patient-model
 * personalIdentifier 1..1 Identifier "Personal identifier" "An identifier of the patient that is unique within a defined scope. Example: National ID (birth number) for a Czech patient. Multiple identifiers could be provided"
@@ -24,6 +26,6 @@ Target: "Patient"
 * dateOfBirth -> "Patient.birthDate"
 * gender -> "Patient.gender"
 // below are not used uniformely in all guidelines
-* countryOfAffiliation -> "Patient.extension[patient-citizenship].extension[code].valueCodeableConcept"
+* countryOfAffiliation -> "Patient.extension[patient-citizenship].extension[code].valueCodeableConcept" // debatable mapping?
 * nativeLanguage -> "Patient.communication.language" // mapping to broader data element
 * nationality -> "Patient.extension[patient-nationality].extension[code].valueCodeableConcept"
