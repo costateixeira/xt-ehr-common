@@ -1,8 +1,8 @@
 id: hl7.eu.fhir.xt-ehr.common
 canonical: https://www.xt-ehr.eu/specifications/fhir
-name: Xt-EHR
-title: Xt-EHR
-description: Xt-EHR
+name: Xt-EHR Common
+title: Xt-EHR Common
+description: Xt-EHR Common profiles, etc.
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
@@ -54,7 +54,7 @@ pages:
 #
 parameters:
   produce-jekyll-data: true
-  special-url:
+  #special-url:
 
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
