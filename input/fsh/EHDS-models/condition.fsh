@@ -24,17 +24,12 @@ Title: "Condition model"
 Description: """EHDS refined base model for a clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern."""
 Characteristics: #can-be-target
 
+// Elements inherited from EHDSConditionCore:
+// - problem
+// - onsetDate
+// - endDate
+// - category
 
-* problem 1..1 CodeableConcept "Code identifying the condition, problem or diagnosis"
-  * ^binding.description = "ICD-10, SNOMED CT, ICD-O, Orphacode if rare disease is diagnosed"
-  * ^binding.strength = #preferred
-  * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.2; PS (v3.4) A.2.2.2.1, A.2.3.1.1"
-* onsetDate 0..1 dateTime "Onset date of a problem/condition"
-  * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.3; PS (v3.4) A.2.2.2.2, A.2.3.1.2"
-* endDate 0..1 dateTime "The date or estimated date that the condition resolved or went into remission"
-  * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.4; PS (v3.4) A.2.2.2.3"
-* category 0..* CodeableConcept "Category or categories of the problem (e.g. POA - present on admission, HAC - hospital aquired condition, and other categorisations)."
-  * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.5"
 * problemStatus 0..1 CodeableConcept "Status of the condition/problem (active, resolved, inactive, ...)"
   * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.7; PS (v3.4) A.2.2.2.1"
   * ^binding.description = "HL7 Condition Clinical Status Codes"
