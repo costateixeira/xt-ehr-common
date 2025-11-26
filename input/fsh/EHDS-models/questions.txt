@@ -1,2 +1,22 @@
-Where is traceability?
+The purpose of a data model is to explain and agree among different types of professionals the data structures. They are minimal, don't need to have all technical considerations. They are mostly made to be reused and specialized, not constrained.
+The current models seem to be a repetition of FHIR and are maximalist and designed for profiling. This affects the very purpose of the models
+
+
+Missing traceability?
 Where is contactperson / legalGuardian?
+intendedRecipient: Device?
+Author vs origin. Is Device an Author? what are implications?
+Version: why not in dataset?
+Alerts in HDR is a section
+Allergy manifestation is under reaction - it seems better, but meaning may be ambiguous. should be confirmed
+Added A2.2.2.1 Medical Alert description
+presentOnAdmission is duplicate
+EHDS should NOT have a header. Authoring convenience doesn't justify all the added metadata everywhere
+observation - why result backbone and resultDescription outside?
+observation.specimen . only for lab? does that justify the use of 2 profiled models?
+
+what is observation.dataAbsentReason???
+
+medicationreason. why cc and text?
+dr. medication.reasonforchange?
+dosage should be reviewed. sequence doesn't make sense in the model

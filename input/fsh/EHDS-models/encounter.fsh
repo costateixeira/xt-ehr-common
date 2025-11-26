@@ -1,5 +1,38 @@
-Logical: EHDSEncounter
+Logical: EHDSEncounterCore
 Parent: EHDSDataSet
+Title: "Encounter model"
+Description: """EHDS refined base model for Encounter"""
+Characteristics: #can-be-target
+
+
+
+* priority 0..1 CodeableConcept "Priority" """Indicates the urgency of the encounter."""
+  * ^binding.description = "hl7:v3-xEncounterAdmissionUrgency" // Where is this?
+  * ^binding.strength = #preferred
+
+* actualPeriod 0..1 Period "The actual start and end time of the encounter"
+
+* admission 0..1 Base "Details about the admission to a healthcare service"
+  * reason[x] 0..* CodeableConcept or EHDSCondition or EHDSProcedure or EHDSObservation "Reason(s) for admission, e.g. problem, procedure or finding."
+  * reasonComment 0..1 string "Explanation of the reason for the encounter."
+
+
+* discharge 0..1 Base "Discharge details"
+  * destinationType 0..1 CodeableConcept "Type of location to which the patient will go after the encounter. E.g. home, hospital, nursing home, left against medical advice etc."""
+    * ^binding.description = "hl7.discharge-disposition"
+    * ^binding.strength = #preferred
+  * destinationLocation[x] 0..1 EHDSOrganisation or EHDSLocation "The location/organisation to which the patient will go after the encounter. Name, address and telecommunication contact."
+
+
+* location 0..* Base "List of locations where the patient has been."
+  * period 0..1 Period "Time period during which the patient was present at the location"
+  * organisationPart[x] 1..1 EHDSOrganisation or EHDSLocation "Organisation or organisation part (department) where the patient was present."
+
+
+
+
+Logical: EHDSEncounter
+Parent: EHDSEncounterCore
 Title: "Encounter model"
 Description: """EHDS refined base model for Encounter"""
 Characteristics: #can-be-target

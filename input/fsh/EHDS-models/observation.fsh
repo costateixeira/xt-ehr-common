@@ -1,5 +1,50 @@
-Logical: EHDSObservation
+Logical: EHDSObservationCore
 Parent: EHDSDataSet
+Title: "Observation model"
+Description: """EHDS refined base model for Observation information"""
+Characteristics: #can-be-target
+
+* observationDate[x] 1..1 dateTime or Period "Clinically relevant time or time period for the observation"
+* code 1..1 CodeableConcept "Observation code" """Code representing the observation using the agreed code systems."""
+  * ^binding.description = "LOINC, NPU, SNOMED CT"
+  * ^binding.strength = #preferred
+* resultDescription 0..1 string "Comments and narrative representation of the observation result and findings."
+* result 0..1 Base "Result of the observation including text, numeric and coded results of the measurement and measurement uncertainty. Content of the observation result will vary according to the type of the observation."
+  * value[x] 1..1 string or Quantity or Range or CodeableConcept "Observation result value according to the type of observation"
+    * ^binding.description = "UCUM for units, SNOMED CT for coded results"
+    * ^binding.strength = #preferred
+
+* anatomicLocation 0..1 EHDSBodyStructure "Anatomic location and laterality where the observation was performed."
+* specimen 0..* EHDSSpecimenCore "Specimen information"
+
+* method 0..1 CodeableConcept "Observation method" """Observation method (measurement principle) to obtain the result."""
+  * ^binding.description = "SNOMED CT"
+  * ^binding.strength = #preferred
+* performer[x] 0..1 EHDSHealthProfessional or EHDSPatient or EHDSRelatedPerson "Performer of the observation. Some test could be performed by the patient himself or by a care giver. Those are in the scope of this deliverable under specified conditions."
+//reporter in DataSet
+* referenceRange 0..* Base "Reference range, multiple reference ranges of different types culd by provided. Provides guide for interpretation of result."
+  * ^comment = "Reference ranges are usually implied only for a numeric scale type. Use of the same units for reference range and value is implied."
+* interpretation 0..* CodeableConcept "Information about reference intervals and result interpretation."
+  * ^binding.description = "SNOMED CT, HL7 ObservationInterpretation"
+  * ^binding.strength = #preferred
+
+* component 0..* Base "Component in case the observation consists of multiple sub-observations (e.g. blood pressure)."
+  * code 1..1 CodeableConcept "Code representing the observation using the agreed code systems."
+    * ^binding.description = "LOINC, NPU, SNOMED CT"
+    * ^binding.strength = #preferred
+  * result 0..1 Base "Result of the observation including text, numeric and coded results of the measurement and measurement uncertainty. Content of the observation result will vary according to the type of the observation."
+    * value[x] 1..1 string or Quantity or Range or CodeableConcept "Observation result value according to the type of observation"
+    * uncertainty 0..1 Base "Measurement uncertainty type and interval if needed."
+  * referenceRange 0..* Base "Reference range, multiple reference ranges of different types culd by provided. Provides guide for interpretation of result."
+    * ^comment = "Reference ranges are usually implied only for a numeric scale type. Use of the same units for reference range and value is implied."
+  * interpretation 0..* CodeableConcept "Information about reference intervals and result interpretation."
+    * ^binding.description = "SNOMED CT, HL7 ObservationInterpretation"
+    * ^binding.strength = #preferred
+
+
+
+Logical: EHDSObservation
+Parent: EHDSObservationCore
 Title: "Observation model"
 Description: """EHDS refined base model for Observation information"""
 Characteristics: #can-be-target

@@ -1,4 +1,4 @@
-Logical: EHDSProcedure
+Logical: EHDSProcedureCore
 Parent: EHDSDataSet
 Title: "Procedure model"
 Description: """EHDS refined base model for an action that is or was performed on or for a patient"""
@@ -11,6 +11,16 @@ Characteristics: #can-be-target
   * ^binding.description = "SNOMED CT"
   * ^binding.strength = #preferred
 * date[x] 0..1 dateTime or Period "Date and time of the procedure or interval of its performance"
+* description 0..1 string "Description of the procedure"
+* focalDevice 0..* EHDSDevice "Device(s) that is/are implanted, removed, or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure."
+
+
+Logical: EHDSProcedure
+Parent: EHDSProcedureCore
+Title: "Procedure model"
+Description: """EHDS refined base model for an action that is or was performed on or for a patient"""
+Characteristics: #can-be-target
+
 * performer 0..* EHDSHealthProfessional "An actor who performed the procedure"
 * bodySite 0..* EHDSBodyStructure "Procedure target body site. Details of where the procedure was performed. Laterality may be included as qualifier of the body site."
 * reason[x] 0..* CodeableConcept or EHDSCondition or EHDSObservation or EHDSProcedure "The reason why the procedure was performed. This may be a concept from a terminology or a reference to a specific instance that describes the reason."
@@ -23,5 +33,4 @@ Characteristics: #can-be-target
   * ^binding.description = "ICD-10, SNOMED CT, Orphacode if rare disease is diagnosed"
   * ^binding.strength = #preferred
 * deviceUsed 0..* EHDSDevice "Device used to perform the procedure"
-* focalDevice 0..* EHDSDevice "Device(s) that is/are implanted, removed, or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure."
 * note 0..1 string "Additional information about the procedure"
