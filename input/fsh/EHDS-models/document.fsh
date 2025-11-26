@@ -27,6 +27,8 @@ Characteristics: #can-be-target
   * serviceSpecialty 0..* CodeableConcept "Additional details about where the content was created (e.g. clinical specialty)"
     * ^binding.description = "SNOMED CT"
     * ^binding.strength = #preferred
+//why?
+
   * custodian 0..1 EHDSOrganisation "Organisation that is in charge of maintaining the document/report."
   * confidentiality 0..1 CodeableConcept "Level of confidentiality of the document. Implicit value is normal."
     * ^binding.description = "hl7:Confidentiality"
