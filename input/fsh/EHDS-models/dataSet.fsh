@@ -16,4 +16,4 @@ Characteristics: #can-be-target
     * ^binding.description = "BCP 47"
     * ^binding.strength = #preferred
 
-
+  * version 0..1 string "Version of the information"

@@ -22,6 +22,8 @@ Characteristics: #can-be-target
   * eventType 0..* CodeableConcept "Categorisation of the event covered by the document (e.g. laboratory study types, imaging study types including modality, etc.). Selection of such tags or labels depends on the use case and agreement between data sharing parties. This meta-data element serves primarily for searching and filtering purposes."
     * ^binding.description = "LOINC, SNOMED CT, dicom-cid-33-Modality"
     * ^binding.strength = #preferred
+//why?
+
   * serviceSpecialty 0..* CodeableConcept "Additional details about where the content was created (e.g. clinical specialty)"
     * ^binding.description = "SNOMED CT"
     * ^binding.strength = #preferred
