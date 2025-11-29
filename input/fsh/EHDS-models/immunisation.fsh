@@ -12,7 +12,7 @@ Characteristics: #can-be-target
 * vaccine 1..1 CodeableConcept "Type of vaccine" """Generic description of the vaccine/prophylaxis or its component(s)."""
   * ^binding.description = "SNOMED CT, ATC"
   * ^binding.strength = #preferred
-* administeredProduct 0..1 EHDSMedication "Administered medicinal product"
+* administeredProduct 0..1 EHDSMedicationCore "Administered medicinal product"
 * doseNumber 0..1 integer "Number in a series of vaccinations / doses" """Order in the vaccination course."""
 * dateTimeOfVaccination 1..1 dateTime "Date and time of vaccination" """The date and optionally the exact time when the vaccination was administered."""
 * administeringCentre 0..* EHDSOrganisation "Administering centre" """Name/code of administering centre or a health authority responsible for the vaccination event"""

@@ -9,3 +9,5 @@ Characteristics: #can-be-target
   * ^requirements = "eHN PS Guideline"
 * period 0..1 Period "Date of entry and departure" "The period during which the patient visited the country"
   * ^requirements = "eHN PS Guideline"
+* comment 0..1 string "Notes on the travel stay"
+  * ^requirements = "eHN HDR Guideline"

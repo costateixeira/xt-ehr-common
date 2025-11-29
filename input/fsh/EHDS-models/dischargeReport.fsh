@@ -4,7 +4,7 @@ Title: "Discharge Report model"
 Description: """EHDS refined base model for Discharge Report"""
 Characteristics: #can-be-target
 
-* header.intendedRecipient[x] 0..* EHDSPatient or EHDSRelatedPerson or EHDSHealthProfessional or EHDSOrganisation or EHDSDevice "Intended recipient" """Information recipient (intended recipient or recipients of the report, additional recipients might be identified by the ordering party, e.g. GP, other specialist), if applicable"""
+* header.intendedRecipient[x] 0..* EHDSPatientCore or EHDSRelatedPerson or EHDSHealthProfessional or EHDSOrganisation or EHDSDevice "Intended recipient" """Information recipient (intended recipient or recipients of the report, additional recipients might be identified by the ordering party, e.g. GP, other specialist), if applicable"""
 * header.healthInsuranceAndPaymentInformation 0..* EHDSCoverage "Health insurance and payment information"
 
 * body 0..1 Base "Structured body of the discharge report document"
@@ -21,7 +21,7 @@ Characteristics: #can-be-target
     * narrative 0..1 string "Narrative, potentially formatted, content of the section"
     * medicalAlert 0..* EHDSAlert "Description of medical alerts in textual format: any clinical information that is imperative to know so that the life or health of the patient does not come under threat."
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.2.2"
-    * allergyAndIntolerance 0..* EHDSAllergyIntolerance "Allergy and Intolerance. A record of allergies and intolerances (primarily to be used for new allergies or intolerances that occurred during the encounter)."
+    * allergyAndIntolerance 0..* EHDSAllergyIntoleranceCore "Allergy and Intolerance. A record of allergies and intolerances (primarily to be used for new allergies or intolerances that occurred during the encounter)."
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.2.1"
     * otherAlert 0..* CodeableConcept "A warning, other than included in allergies." "The warning can be entered in code (there are codes for frequently used alerts) but seeing the dynamic nature of the warnings, these alerts will often be entered as free text"
 
@@ -96,6 +96,7 @@ Characteristics: #can-be-target
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.7.2"
       * narrative 0..1 string "Narrative, potentially formatted, content of the section"
       * functionalStatusAssessment 0..* EHDSFunctionalStatusCore "An individual's ability to perform normal daily activities required to meet basic needs, fulfil usual roles and maintain health and well-being"
+    * dischargeNote 0..1 string "Discharge Note"
 
     * medicationSummary 0..1 Base "Medication summary. Summary information on the medication recommended for the period after discharge, indicating whether the medication is changed or newly started. Compared to previous practices, the overview is supplemented with medication that has been discontinued."
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.8.1"
@@ -119,78 +120,27 @@ Characteristics: #can-be-target
   * ^requirements = "eHN Guideline HDR (v1.1): A.2.4"
   * narrative 0..1 string "Narrative content of the section. This narrative shell containing either summary narrative description of all subsections, or similar narrative sub-section elements should be provided."
   * objectiveFindings 0..1 Base "Objective findings" "Sub-section with objective findings."
-    * anthropometricObservations 0..* EHDSObservation "Anthropometric observations, such as body weight and height of the patient, BMI, circumference of head, waist, hip, limbs and skin fold thickness."
+    * anthropometricObservations 0..* EHDSObservationCore "Anthropometric observations, such as body weight and height of the patient, BMI, circumference of head, waist, hip, limbs and skin fold thickness."
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.1.2"
-    * vitalSigns 0..* EHDSObservation "Vital signs observations. Mandatory: pulse rate, respiratory rate, systolic and diastolic blood pressure with site information; optional: 02 saturation"
+    * vitalSigns 0..* EHDSObservationCore "Vital signs observations. Mandatory: pulse rate, respiratory rate, systolic and diastolic blood pressure with site information; optional: 02 saturation"
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.1.3"
-    * physicalExamination 0..* EHDSObservation "Physical examination" "Physical examination is the process of evaluating objective anatomical findings. It is typically the first diagnostic measure performed after taking the patient's history, which allows an initial assessment of symptoms and is useful for determining the differential diagnoses and further steps. Physical examination can be performed through observation, palpation, percussion, and auscultation."
-      * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.1.4"
-    * note 0..1 string "Observation note"
+    * physicalExaminationNote 0..1 string "Physical examination Observation note"
 
 
-
-
-Logical: EHDSDischargeReport
-Parent: EHDSDischargeReportCore
-Title: "Discharge Report model"
-Description: """EHDS refined base model for Discharge Report"""
-Characteristics: #can-be-target
-
-// Elements inherited from EHDSDischargeReportCore:
-// - header.intendedRecipient[x]
-// - header.healthInsuranceAndPaymentInformation
-// - body (with all sections: advanceDirectives, alerts, encounterInformation, courseOfEncounter, dischargeDetails)
-// - attachments[x]
-
-// Additional sections for the full Discharge Report (not in Core)
-
-
-I am now beginning page 40
-
-    //ok. performer and dateAndTime removed as they are present in Observations
-* body.admissionEvaluation
-  * objectiveFindings
-    * narrative 0..1 string "Narrative content of the section. This narrative shell containing either summary narrative description of all subsections, or similar narrative sub-section elements should be provided."
-    * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.1"
-    * time 0..1 dateTime "Date and time of the admission evaluation examination"
-      * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.1.1"
-    * performer 0..* EHDSHealthProfessional "Health professional(s) responsible for the admission evaluation examination."
-
-  //ok
-  * functionalStatus 0..1 Base "Section: Functional status" "Functional status can be assessed in several different ways, usually with a focus on the person's abilities to perform basic activities of daily living (ADL), which include basic self-care such as bathing, feeding, and toileting and instrumental activities of daily living (IADL), which includes activities such as cooking, shopping, and managing one's own affairs.For details see: https://paciowg.github.io/functional-status-ig/"
-    * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.2"
-    * narrative 0..1 string "Narrative, potentially formatted, content of the section"
-    * functionalStatusAssessment 0..* EHDSFunctionalStatus "An individual's ability to perform normal daily activities required to meet basic needs, fulfil usual roles and maintain health and well-being"
-
-  // ok. infectiousContacts into a different model?
 * body.patientHistory 0..1 Base "Section: Patient health history (anamnesis)."
   * ^requirements = "eHN Guideline HDR (v1.1): A.2.5"
   * narrative 0..1 string "Narrative content of the section. This narrative shell containing either summary narrative description of all subsections, or similar narrative subsection elements should be provided."
   * medicalHistory 1..1 Base "Medical history subsection."
     * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1"
     * narrative 0..1 string "Narrative content of the section. This narrative shell containing either summary narrative description of all subsections, or similar narrative subsection elements should be provided."
-    * pastProblems 1..* EHDSCondition "Past problems" "A list of conditions of a patient that the patient suffered in the past or still suffers. Unlike diagnostic summary, medical history is not only a list of problems, but could contain broader description of the condition and its progress, details about treatment including medication and patient response to treatment. Past problem section (unlike the same section of the patient summary) should include only conditions that are important for continuity of care. This section, if provided, complements the diagnostic summary section of the discharge report. "
+    * pastProblems 1..* EHDSConditionCore "Past problems" "A list of conditions of a patient that the patient suffered in the past or still suffers. Unlike diagnostic summary, medical history is not only a list of problems, but could contain broader description of the condition and its progress, details about treatment including medication and patient response to treatment. Past problem section (unlike the same section of the patient summary) should include only conditions that are important for continuity of care. This section, if provided, complements the diagnostic summary section of the discharge report. "
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1.1"
-    * devicesAndImplants 1..* EHDSDeviceUse "Devices and Implants" "Devices and implants in patient anamnesis. Negative statement must be explicitly stated."
+    * devicesAndImplants 1..* EHDSDeviceUseCore "Devices and Implants" "Devices and implants in patient anamnesis. Negative statement must be explicitly stated."
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1.2"
-    * historyOfProcedures 0..* EHDSProcedure "History of procedures" "Historical procedures performed on or for a patient, relevant for the current encounter.Examples include surgical procedures, diagnostic procedures, endoscopic procedures, biopsies, counselling, physiotherapy, personal support services, adult day care services, etc."
+    * historyOfProcedures 0..* EHDSProcedureCore "History of procedures" "Historical procedures performed on or for a patient, relevant for the current encounter.Examples include surgical procedures, diagnostic procedures, endoscopic procedures, biopsies, counselling, physiotherapy, personal support services, adult day care services, etc."
       * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1.3"
-    * vaccination 0..* EHDSImmunisation "Vaccination history of the patient."
-      * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1.4"
-    * epidemiologicalHistory 0..1 Base "Epidemiological history" "Travel history and infectious contacts"
-      * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1.5"
-      * infectiousContacts 0..* EHDSInfectiousContact "Infectious contacts of the patient"
-        * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1.5.1"
-      * travelHistory 0..* EHDSTravelHistory "Travel history reported by the patient. Multiple records could be provided."
-        * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.1.5.2"
-    * pregnancyHistory 0..1 Base "Section: Pregnancy history" """To present the current health state of the patient with respect to pregnancy and to provide chronological and outcome information about past pregnancies. """
-      * ^requirements = "eHN Guideline PS (v3.4) A2.6, ISO IPS"
-      * currentPregnancyStatus 0..1 EHDSCurrentPregnancy "Current pregnancy status" """Current state of the pregnancy at the date the observation was made, e.g. pregnant, not pregnant, unknown."""
-      * previousPregnanciesStatus 0..1 CodeableConcept "Overall status of previous pregnancies" """Overall status of previous pregnancies, including
-  — Yes, previous pregnancies
-  — No, previous pregnancies
-  — Unknown"""
-      * previousPregnancies 0..* EHDSPregnancyHistory "History of previous pregnancies" """Information about previous pregnancies, including outcomes and number of children/fetuses in each pregnancy."""
+    * device 0..1 EHDSDevice "Device"
+
 
   * familyHistorySection 0..1 Base "Family history section" "Relevant family history section."
     * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.2"
@@ -249,12 +199,69 @@ I am now beginning page 40
       * drugConsumption 0..* EHDSSubstanceUse "Consumption of drugs and other substances (in terms of abuse)."
         * ^requirements = "eHN Guideline HDR (v1.1): A.2.5.4.3"
 
+
+
+* body.courseOfEncounter.significantProcedures.procedureEntry only EHDSProcedureCore
+
+
+
+
+
+Logical: EHDSDischargeReport
+Parent: EHDSDischargeReportCore
+Title: "Discharge Report model"
+Description: """EHDS refined base model for Discharge Report"""
+Characteristics: #can-be-target
+
+// Elements inherited from EHDSDischargeReportCore:
+// - header.intendedRecipient[x]
+// - header.healthInsuranceAndPaymentInformation
+// - body (with all sections: advanceDirectives, alerts, encounterInformation, courseOfEncounter, dischargeDetails)
+// - attachments[x]
+
+// Additional sections for the full Discharge Report (not in Core)
+
+
+
+
+    //ok. performer and dateAndTime removed as they are present in Observations
+* body.admissionEvaluation
+  * objectiveFindings
+    * narrative 0..1 string "Narrative content of the section. This narrative shell containing either summary narrative description of all subsections, or similar narrative sub-section elements should be provided."
+    * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.1"
+    * time 0..1 dateTime "Date and time of the admission evaluation examination"
+      * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.1.1"
+    * performer 0..* EHDSHealthProfessional "Health professional(s) responsible for the admission evaluation examination."
+
+  //ok
+  * functionalStatus 0..1 Base "Section: Functional status" "Functional status can be assessed in several different ways, usually with a focus on the person's abilities to perform basic activities of daily living (ADL), which include basic self-care such as bathing, feeding, and toileting and instrumental activities of daily living (IADL), which includes activities such as cooking, shopping, and managing one's own affairs.For details see: https://paciowg.github.io/functional-status-ig/"
+    * ^requirements = "eHN Guideline HDR (v1.1): A.2.4.2"
+    * narrative 0..1 string "Narrative, potentially formatted, content of the section"
+    * functionalStatusAssessment 0..* EHDSFunctionalStatus "An individual's ability to perform normal daily activities required to meet basic needs, fulfil usual roles and maintain health and well-being"
+
+
+
+
+  // ok. infectiousContacts into a different model?
+* body.patientHistory
+  * medicalHistory
+    * pregnancyHistory 0..1 Base "Section: Pregnancy history" """To present the current health state of the patient with respect to pregnancy and to provide chronological and outcome information about past pregnancies. """
+      * ^requirements = "eHN Guideline PS (v3.4) A2.6, ISO IPS"
+      * currentPregnancyStatus 0..1 EHDSCurrentPregnancy "Current pregnancy status" """Current state of the pregnancy at the date the observation was made, e.g. pregnant, not pregnant, unknown."""
+      * previousPregnanciesStatus 0..1 CodeableConcept "Overall status of previous pregnancies" """Overall status of previous pregnancies, including
+  — Yes, previous pregnancies
+  — No, previous pregnancies
+  — Unknown"""
+      * previousPregnancies 0..* EHDSPregnancyHistory "History of previous pregnancies" """Information about previous pregnancies, including outcomes and number of children/fetuses in each pregnancy."""
+
+
 // Extended element for courseOfEncounter.diagnosticSummary.problemDetails in full model
 * body.courseOfEncounter.diagnosticSummary.problemDetails.presentOnAdmission 0..1 CodeableConcept "Whether the condition was present on admission or acquired during encounter" """Category of the problem allows flagging for conditions acquired during encounter."""
   * ^comment = "Value set can include Present on admission [POA], Hospital acquired condition [HAC], Not applicable or Unknown"
 
+
+
 // Use the full types instead of Core types for certain elements
-* body.courseOfEncounter.significantProcedures.procedureEntry only EHDSProcedure
 * body.courseOfEncounter.medicalDevicesAndImplants.medicalDevicesAndImplants only EHDSDeviceUse
 * body.courseOfEncounter.pharmacotherapy.pharmacotherapy only EHDSMedicationStatement
 * body.courseOfEncounter.significantObservationResults.significantObservationResult[x] only EHDSObservation or EHDSLaboratoryObservation

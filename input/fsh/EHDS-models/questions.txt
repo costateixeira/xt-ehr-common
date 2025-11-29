@@ -1,7 +1,6 @@
 The purpose of a data model is to explain and agree among different types of professionals the data structures. They are minimal, don't need to have all technical considerations. They are mostly made to be reused and specialized, not constrained.
 The current models seem to be a repetition of FHIR and are maximalist and designed for profiling. This affects the very purpose of the models
 
-
 Missing traceability?
 Where is contactperson / legalGuardian?
 intendedRecipient: Device?
@@ -20,3 +19,9 @@ what is observation.dataAbsentReason???
 medicationreason. why cc and text?
 dr. medication.reasonforchange?
 dosage should be reviewed. sequence doesn't make sense in the model
+comment and narrative are mixed, shouldn't 
+discharge destination and type missing?
+hdr.encounter.location - mising - on purpose?
+
+functional status assesment structure seems off. It should be assessment per condition?
+travel hisrory comment was missing

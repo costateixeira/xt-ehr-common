@@ -18,17 +18,6 @@ Characteristics: #can-be-target
 
 
 
-Logical: EHDSCondition
-Parent: EHDSConditionCore
-Title: "Condition model"
-Description: """EHDS refined base model for a clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern."""
-Characteristics: #can-be-target
-
-// Elements inherited from EHDSConditionCore:
-// - problem
-// - onsetDate
-// - endDate
-// - category
 
 * problemStatus 0..1 CodeableConcept "Status of the condition/problem (active, resolved, inactive, ...)"
   * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.7; PS (v3.4) A.2.2.2.1"
@@ -41,13 +30,29 @@ Characteristics: #can-be-target
   * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.9"
   * ^binding.description = "HL7 Condition/Diagnosis Severity; SNOMED CT"
   * ^binding.strength = #preferred
-// MyHealth@EU PS on CDA uses SNOMED CT, but HDR uses HL7 for severity
-* anatomicLocation 0..* EHDSBodyStructure "The anatomical location including laterality where this condition manifests itself."
-  * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.2"
 * stage 0..* CodeableConcept "Stage/grade usually assessed formally using a specific staging/grading system. Multiple assessment systems could be used."
   * ^binding.description = "e.g. TNM, ICD-O-3, Bi-Rads, Li-Rads, …"
   * ^binding.strength = #preferred
   * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.10"
+
+
+
+Logical: EHDSCondition
+Parent: EHDSConditionCore
+Title: "Condition model"
+Description: """EHDS refined base model for a clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern."""
+Characteristics: #can-be-target
+
+// Elements inherited from EHDSConditionCore:
+// - problem
+// - onsetDate
+// - endDate
+// - category
+
+// MyHealth@EU PS on CDA uses SNOMED CT for status, but FHIR has required binding
+// MyHealth@EU PS on CDA uses SNOMED CT, but HDR uses HL7 for severity
+* anatomicLocation 0..* EHDSBodyStructure "The anatomical location including laterality where this condition manifests itself."
+  * ^requirements = "eHN Guideline HDR (v1.1): A.2.6.1.2"
 * diagnosisAssertionStatus 0..1 CodeableConcept "Assertion about the certainty associated with a diagnosis. Diagnostic and/or clinical evidence of condition."
   * ^binding.description = "HL7 Condition Verification Status"
   * ^binding.strength = #preferred
