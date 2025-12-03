@@ -1,0 +1,156 @@
+EHDSModels : Validation Results
+=========================================
+
+err = 5, warn = 4, info = 2
+IG Publisher Version: 2.0.27
+Generated Wed Dec 03 08:04:04 UTC 2025. FHIR version 5.0.0 for xtehr.eu.ehds.models#0.2.1 (canonical = http://www.xt-ehr.eu/fhir/models)
+ Build Errors : 0 / 4 / 0
+ /work/fsh-generated/resources/ImplementationGuide-xtehr.eu.ehds.models : 0 / 0 / 16
+ /work/fsh-generated/resources/StructureDefinition-EHDSAddress : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSAdvanceDirective : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSAlert : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSAllergyIntolerance : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSAllergyIntoleranceCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSAttachment : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSBodyStructure : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSCarePlan : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSCondition : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSConditionCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSCoverage : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSCurrentPregnancy : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDataSet : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDevice : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDeviceUse : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDeviceUseCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDischargeReport : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDischargeReportCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDispenseDecline : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDocument : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDosage : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDosaging : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSDosagingCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSEncounter : 2 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSEncounterCore : 3 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSEndpoint : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSEpisodeOfCare : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSFamilyMemberHistory : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSFunctionalStatus : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSFunctionalStatusCore : 0 / 0 / 2
+ /work/fsh-generated/resources/StructureDefinition-EHDSHealthProfessional : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSHumanName : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSHumanNameCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSImagingReport : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSImagingStudy : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSImmunisation : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSInfectiousContact : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSLaboratoryObservation : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSLaboratoryReport : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSLocation : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedia : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedication : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedicationAdministration : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedicationCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedicationDispense : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedicationPrescription : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedicationStatement : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSMedicationStatementCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSObservation : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSObservationCore : 0 / 0 / 2
+ /work/fsh-generated/resources/StructureDefinition-EHDSOrganisation : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSPatient : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSPatientAnimal : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSPatientCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSPatientSummary : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSPregnancyHistory : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSProcedure : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSProcedureCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSRelatedPerson : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSServiceRequest : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSSocialHistory : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSSpecimen : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSSpecimenCore : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSSubstance : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSSubstanceUse : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSTelecom : 0 / 0 / 1
+ /work/fsh-generated/resources/StructureDefinition-EHDSTravelHistory : 0 / 0 / 1
+</table>
+== n/a ==
+WARNING: /work/output/StructureDefinition-EHDSAllergyIntolerance-definitions.html: The html source has duplicate anchor Ids: EHDSAllergyIntolerance.onsetDate,key_EHDSAllergyIntolerance.onsetDate
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-xtehr.eu.ehds.models.json ==
+== fsh-generated/resources/StructureDefinition-EHDSAddress.json ==
+== fsh-generated/resources/StructureDefinition-EHDSAdvanceDirective.json ==
+== fsh-generated/resources/StructureDefinition-EHDSAlert.json ==
+== fsh-generated/resources/StructureDefinition-EHDSAllergyIntolerance.json ==
+== fsh-generated/resources/StructureDefinition-EHDSAllergyIntoleranceCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSAttachment.json ==
+== fsh-generated/resources/StructureDefinition-EHDSBodyStructure.json ==
+== fsh-generated/resources/StructureDefinition-EHDSCarePlan.json ==
+== fsh-generated/resources/StructureDefinition-EHDSCondition.json ==
+== fsh-generated/resources/StructureDefinition-EHDSConditionCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSCoverage.json ==
+== fsh-generated/resources/StructureDefinition-EHDSCurrentPregnancy.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDataSet.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDevice.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDeviceUse.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDeviceUseCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDischargeReport.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDischargeReportCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDispenseDecline.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDocument.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDosage.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDosaging.json ==
+== fsh-generated/resources/StructureDefinition-EHDSDosagingCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSEncounter.json ==
+ERROR: StructureDefinition/EHDSEncounter: StructureDefinition.snapshot.element[19]: This element has a Binding but the types [http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSOrganisation] do not make this kind of constraint relevant
+ERROR: StructureDefinition/EHDSEncounter: StructureDefinition.snapshot.element[19].binding: The element EHDSEncounter.admission.admitSource has a binding, but no bindable types are present [http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSOrganisation]
+== fsh-generated/resources/StructureDefinition-EHDSEncounterCore.json ==
+ERROR: StructureDefinition/EHDSEncounterCore: StructureDefinition.differential.element[9]: This element has a Binding but the types [http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSOrganisation] do not make this kind of constraint relevant
+ERROR: StructureDefinition/EHDSEncounterCore: StructureDefinition.snapshot.element[19]: This element has a Binding but the types [http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSOrganisation] do not make this kind of constraint relevant
+ERROR: StructureDefinition/EHDSEncounterCore: StructureDefinition.snapshot.element[19].binding: The element EHDSEncounterCore.admission.admitSource has a binding, but no bindable types are present [http://www.xt-ehr.eu/fhir/models/StructureDefinition/EHDSOrganisation]
+== fsh-generated/resources/StructureDefinition-EHDSEndpoint.json ==
+== fsh-generated/resources/StructureDefinition-EHDSEpisodeOfCare.json ==
+== fsh-generated/resources/StructureDefinition-EHDSFamilyMemberHistory.json ==
+== fsh-generated/resources/StructureDefinition-EHDSFunctionalStatus.json ==
+== fsh-generated/resources/StructureDefinition-EHDSFunctionalStatusCore.json ==
+INFORMATION: StructureDefinition/EHDSFunctionalStatusCore: StructureDefinition.differential.element[6].binding: The element EHDSFunctionalStatusCore.functionalStatusAssessment.functionalAssessmentResult[x] has a binding, and has multiple types subject to bindings ([string, Quantity, CodeableConcept]). The binding will apply to all the types
+== fsh-generated/resources/StructureDefinition-EHDSHealthProfessional.json ==
+== fsh-generated/resources/StructureDefinition-EHDSHumanName.json ==
+== fsh-generated/resources/StructureDefinition-EHDSHumanNameCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSImagingReport.json ==
+== fsh-generated/resources/StructureDefinition-EHDSImagingStudy.json ==
+== fsh-generated/resources/StructureDefinition-EHDSImmunisation.json ==
+== fsh-generated/resources/StructureDefinition-EHDSInfectiousContact.json ==
+== fsh-generated/resources/StructureDefinition-EHDSLaboratoryObservation.json ==
+== fsh-generated/resources/StructureDefinition-EHDSLaboratoryReport.json ==
+== fsh-generated/resources/StructureDefinition-EHDSLocation.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedia.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedication.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedicationAdministration.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedicationCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedicationDispense.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedicationPrescription.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedicationStatement.json ==
+== fsh-generated/resources/StructureDefinition-EHDSMedicationStatementCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSObservation.json ==
+== fsh-generated/resources/StructureDefinition-EHDSObservationCore.json ==
+INFORMATION: StructureDefinition/EHDSObservationCore: StructureDefinition.differential.element[5].binding: The element EHDSObservationCore.result.value[x] has a binding, and has multiple types subject to bindings ([string, Quantity, Range, CodeableConcept]). The binding will apply to all the types
+== fsh-generated/resources/StructureDefinition-EHDSOrganisation.json ==
+== fsh-generated/resources/StructureDefinition-EHDSPatient.json ==
+== fsh-generated/resources/StructureDefinition-EHDSPatientAnimal.json ==
+== fsh-generated/resources/StructureDefinition-EHDSPatientCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSPatientSummary.json ==
+== fsh-generated/resources/StructureDefinition-EHDSPregnancyHistory.json ==
+== fsh-generated/resources/StructureDefinition-EHDSProcedure.json ==
+== fsh-generated/resources/StructureDefinition-EHDSProcedureCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSRelatedPerson.json ==
+== fsh-generated/resources/StructureDefinition-EHDSServiceRequest.json ==
+== fsh-generated/resources/StructureDefinition-EHDSSocialHistory.json ==
+== fsh-generated/resources/StructureDefinition-EHDSSpecimen.json ==
+== fsh-generated/resources/StructureDefinition-EHDSSpecimenCore.json ==
+== fsh-generated/resources/StructureDefinition-EHDSSubstance.json ==
+== fsh-generated/resources/StructureDefinition-EHDSSubstanceUse.json ==
+== fsh-generated/resources/StructureDefinition-EHDSTelecom.json ==
+== fsh-generated/resources/StructureDefinition-EHDSTravelHistory.json ==
